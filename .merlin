@@ -1,0 +1,7 @@
+S .
+B _build
+PKG oUnit
+PKG extlib
+PKG unix
+B +threads
+

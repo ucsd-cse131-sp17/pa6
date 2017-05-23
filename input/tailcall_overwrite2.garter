@@ -1,0 +1,7 @@
+def f(a,b,c,d,e,f,g,h,i,j):
+  (a+b+c+d+e+f+g+h+i+j)
+def g(x):
+  let a = 1, b = 2, c = 3, d = 4
+  in f(d,d,d,d,d,d,d,d,d,x)
+
+g(1)

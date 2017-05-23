@@ -1,0 +1,6 @@
+def f(w,x,y,z):
+  (w+x+y+z)
+def g(x):
+  f(x,x,x,x)
+
+g(1)
