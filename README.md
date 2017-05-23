@@ -4,7 +4,7 @@
 
 ## Assignment
 
-[Link to your own repo](/#todo)
+[Link to your own repo](https://classroom.github.com/assignment-invitations/4debc08bc4af2225fc9fc445493dceef)
 
 The Garter language manages its memory automatically.  You will implement the
 automated memory management.
