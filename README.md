@@ -215,7 +215,7 @@ currently-inspected value.
 For each value, we check if it's live, and if it is, set its forwarding address
 to the current compacted data pointer and increase the compacted pointer by the
 size of the value. If it is not live, we simply continue onto the next value by
-jumping 3 bytes ahead. The traversal stops when we reach the `max_address`
+jumping 3 words ahead. The traversal stops when we reach the `max_address`
 stored above.
 
 Then we traverse all of the stack and heap values again to update any internal
