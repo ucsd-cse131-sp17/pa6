@@ -222,9 +222,9 @@ Then we traverse all of the stack and heap values again to update any internal
 pointers to use the new addresses.
 
 In this case, `y` is scheduled to move from its current location of `0x34` to a
-new location of `0x1c`. So its forwarding pointer is set, and both references to
-it on the stack are also updated. `x` is already in its final position (starting
-at 0), so while its forwarding pointer is set, references to it do not change.
+new location of `0x1c`. So its forwarding pointer is set, and reference to it on
+the stack is also updated. `x` is already in its final position (starting at 0),
+so while its forwarding pointer is set, references to it do not change.
 
 #### Compact
 
@@ -312,7 +312,7 @@ that takes an array and a number of elements to print, and prints them one per
 line like so:
 
 ```
-  0/0x100df0: 0x1 (5)
+  0/0x100df0: 0x1 (1)
   1/0x100df4: 0x0 (0)
   ...
   23/0x100e4c: 0x4 (4)
