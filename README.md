@@ -2,6 +2,10 @@
 
 ![A Garter Snake](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Coast_Garter_Snake.jpg/1920px-Coast_Garter_Snake.jpg)
 
+## Errata
+
+1. Multiple typos fixed in the write-up text
+
 ## Assignment
 
 [Link to your own repo](https://classroom.github.com/assignment-invitations/4debc08bc4af2225fc9fc445493dceef)
