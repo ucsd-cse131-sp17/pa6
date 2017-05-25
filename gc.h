@@ -18,9 +18,8 @@ void debug_print_heap(int* heap, int size);
 
     - current_ESP: current ESP
 
-    - stack_top: A pointer to the top of the stack (lowest address). During
-                 execution, this will be the current value of ESP, so it points
-                 to the most recent frame's variables
+    - stack_top: A pointer to the top of the stack (lowest address). It points
+                 to the last stack frame's last variable.
 
     - heap_start: A pointer to the start of the heap; typically the global value
                   HEAP, but provided as a parameter for testing

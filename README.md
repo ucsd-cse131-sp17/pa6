@@ -197,17 +197,16 @@ the stack, excluding return pointers and base pointers (which don't represent
 data on the heap). We can do this by looping over the words on the stack, and
 doing a depth-first traversal of the heap from any pairs that we find.
 
-The `stack_top` and `first_frame` arguments to `mark` point to the top of the
-stack, which contains a previous `ESP` value, followed by a return pointer. If
-`f` had local variables, then they would cause `stack_top` to point higher.
-`stack_bottom` points at the highest (in terms of number) word on the stack.
-Thus, we want to loop from `stack_top` to `stack_bottom`, traversing the heap
-from each reference we find. We also want to _skip_ the words corresponding to
-`first_frame` and the word after it, and each pair of `ESP` and return pointer
-from there down (if there are multiple function calls active).
+The `stack_top` argument of `mark` points to the top of the stack, which
+currently contains `y`. `stack_bottom` points at the very first word on the
+stack (the same as the `STACK_BOTTOM` global variable. Thus, we want to loop
+from `stack_top` to `stack_bottom`, traversing the heap from each reference we
+find. We also want to _skip_ the words corresponding to old `ESP` and the return
+address, which denote the beginning of a new stack frame.
 
 Along the way, we also keep track of the highest start address of a live value
-(`max_address`) to use later, which in this case is `0x34`, the address of `y`.
+in heap (which we'll call `max_address`) to use later, and that value will be
+returned by `mark()`. In this case it is `0x34`, which is the address of `y`.
 
 #### Forward
 

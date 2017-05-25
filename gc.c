@@ -21,7 +21,7 @@ void debug_print_heap(int* heap, int size) {
   }
 }
 
-int* mark(int* stack_top, int* current_ESP, int* stack_bottom, int* max_addr) {
+int* mark(int* stack_top, int* current_ESP, int* stack_bottom, int* heap_start) {
   fprintf(stderr, "TODO: mark @ gc.c\n");
   exit(1);
 }
