@@ -5,6 +5,7 @@
 ## Errata
 
 1. Multiple typos fixed in the write-up text
+2. Fixed a bug in `gctest.c`
 
 ## Assignment
 
