@@ -89,7 +89,7 @@ void TestMark(CuTest* tc) {
   expectHeap[3] = 0x00000001;
   expectHeap[9] = 0x00000001;
 
-  int* max_address = mark(stack, (stack + 2), (stack + 4), heap);
+  int* max_address = mark(stack, (stack + 3), (stack + 4), heap);
 
   CuAssertArrayEquals(tc, expectHeap, heap, heap_size);
 
@@ -105,7 +105,7 @@ void TestMark(CuTest* tc) {
   int* expectHeap2 = calloc(heap_size, sizeof (int));
   memcpy(expectHeap2, heap, heap_size * (sizeof (int)));
 
-  forward(stack, (stack + 2), stack + 4, heap, max_address);
+  forward(stack, (stack + 3), stack + 4, heap, max_address);
 
   expectHeap2[3] = ((int)heap) + 1;
   expectHeap2[4] = ((int)(heap + 3)) + 1;
