@@ -70,9 +70,11 @@ let run_no_vg (program_name : string) args : result =
   let (rstdout, rstdout_name, rstderr, rstderr_name, rstdin) = make_tmpfiles "run" in
   let ran_pid = Unix.create_process (program_name ^ ".run") (Array.of_list ([""] @ args)) rstdin rstdout rstderr in
   let _timeout = Thread.create (fun () ->
-    Thread.delay timeout;
-    Unix.kill ran_pid 9
-  ) () in
+      Thread.delay timeout;
+      try Unix.kill ran_pid 9 with
+      | Unix.Unix_error(ESRCH, _, _)  -> () (* No such process *)
+      | _                             -> failwith "Timeout !"
+    ) () in
   let (_, status) = waitpid [] ran_pid in
   let result = match status with
     | WEXITED 0 -> Right(string_of_file rstdout_name)
